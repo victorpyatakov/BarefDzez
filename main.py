@@ -110,7 +110,7 @@ def cur_rate(update: Update, context: CallbackContext):
     d = {
         'INEKO': get_ineco_online(),
         'SAS':get_sas_exchange(),
-        'TINCOFF':get_tin_exchange()
+        'TINKOFF':get_tin_exchange()
     }
     d = json.dumps(d, sort_keys=True, indent=4)
     # context.bot.send_message(update.message.chat_id, str(get_cur_rate()))
