@@ -1,0 +1,1 @@
+https://cms3.ru/kak-zapustit-python-skript-v-fonovom-rezhime/
