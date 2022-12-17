@@ -3,11 +3,11 @@ import json
 
 class Ineko:
 
-    @staticmethod
-    def get_api_url() -> str:
+
+    def get_api_url(self) -> str:
         return "https://www.inecobank.am/api/rates/"
 
-    @staticmethod
+
     def get_RUB_AMD(self) -> float:
         """ RUB to DRAM in APP """
         api_url = self.get_api_url()

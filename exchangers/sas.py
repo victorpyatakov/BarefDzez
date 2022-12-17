@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup
 
 class Sas:
 
-    @staticmethod
-    def get_api_url() -> str:
+
+    def get_api_url(self) -> str:
         return 'https://www.sas.am/en/appfood/personal/calculator/'
 
-    @staticmethod
+
     def get_RUB_AMD(self) -> float:
         url = self.get_api_url()
         soup = BeautifulSoup(requests.get(url).content)
