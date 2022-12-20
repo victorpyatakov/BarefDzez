@@ -1,24 +1,29 @@
 import logging
+import os
 
+from dotenv import load_dotenv
 from telegram import Update
-from telegram.ext import Updater, CommandHandler, CallbackContext
+from telegram.ext import CallbackContext, CommandHandler, Updater
+
+
+from exchangers import get_current_exhange
 
 logger = logging.getLogger(__name__)
-from exchangers import get_current_exhange
+load_dotenv()
 
 
 def get_current_exhange_rate(update: Update, context: CallbackContext):
     current_exhange_rate = get_current_exhange()
-    context.bot.send_message(update.message.chat_id, f'🇷🇺 -> 🇦🇲' ) 
+    context.bot.send_message(update.message.chat_id, '🇷🇺 -> 🇦🇲')
     context.bot.send_message(update.message.chat_id, str(current_exhange_rate))
     logger.info('get_current_exhange_rate -> ', update.effective_user)
-    
+
 
 def main() -> None:
-    updater = Updater("5621388544:AAHskp4GjZria_luLZW83PTKYibsmWRbax4")
+    token = os.environ.get('TOKEN')
+    updater = Updater(token)
 
     # Get the dispatcher to register handlers
-    # Then, we register each handler and the conditions the update must meet to trigger it
     dispatcher = updater.dispatcher
 
     # Register commands
