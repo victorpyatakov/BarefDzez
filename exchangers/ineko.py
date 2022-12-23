@@ -3,7 +3,6 @@ import json
 
 class Ineko:
 
-
     def get_api_url(self) -> str:
         return "https://www.inecobank.am/api/rates/"
 
